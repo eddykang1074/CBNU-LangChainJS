@@ -72,11 +72,11 @@ export default async function handler(
       //검색엔진 타빌리에 사용자 질문을 전달하고 응답값을 반환받습니다.
       const searchResult = await searchTool.invoke(prompt);
 
+      //외부 Agent Tool을 사용하는 경우 반환값 타입을 정확히 확인해볼 필요가 있습니다.
+      console.log("Tavily SearchResult2222:", searchResult);
+
       //타빌리 조회결과값은 JSON문자열 포맷으로 제공되므로 JSON객체로 변환해서 사용하면 편해요.
       const result = JSON.parse(searchResult);
-
-      //외부 Agent Tool을 사용하는 경우 반환값 타입을 정확히 확인해볼 필요가 있습니다.
-      console.log("Tavily SearchResult:", searchResult);
 
       //프론트엔드로 반환되는 메시지 데이터 생성하기
       const resultMsg: IMemberMessage = {
@@ -91,9 +91,16 @@ export default async function handler(
       apiResult.msg = "Ok";
     }
   } catch (err) {
+    const resultMsg: IMemberMessage = {
+      user_type: UserType.BOT,
+      nick_name: "bot",
+      message: "조회결과가 존재하지 않거나 조회에 실패했습니다.",
+      send_date: new Date(),
+    };
+
     //Step2:API 호출결과 설정
     apiResult.code = 500;
-    apiResult.data = null;
+    apiResult.data = resultMsg;
     apiResult.msg = "Server Error Failed";
   }
 
