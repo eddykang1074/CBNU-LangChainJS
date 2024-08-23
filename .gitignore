@@ -1,0 +1,8 @@
+next-langchain-app/node_modules
+next-langchain-app/.next
+next-langchain-app/.env
+
+
+next-agentbot-app/node_modules
+next-agentbot-app/.next
+next-agentbot-app/.env
