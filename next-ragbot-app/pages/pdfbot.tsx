@@ -5,7 +5,7 @@ import moment from "moment";
 
 const PDFBot = () => {
   //사용자 대화닉네임 상태값 정의
-  const [nickName, setNickName] = useState<string>("");
+  const [nickName, setNickName] = useState<string>("eddy");
 
   //사용자 입력 채팅 메시지 상태값 정의 및 초기화
   const [message, setMessage] = useState<string>("");
