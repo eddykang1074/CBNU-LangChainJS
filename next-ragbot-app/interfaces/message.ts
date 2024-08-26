@@ -9,6 +9,13 @@ export enum UserType {
   BOT = "Bot",
 }
 
+export enum BotType {
+  LLMGPT = "LLMGPT",
+  LLMGEMINI = "LLMGEMINI",
+  RAGDOC = "RAGDOC",
+  RAGWEB = "RAGWEB",
+}
+
 export interface ISendMessage {
   role: string;
   message: string;
