@@ -6,3 +6,8 @@ next-langchain-app/.env
 next-agentbot-app/node_modules
 next-agentbot-app/.next
 next-agentbot-app/.env
+
+
+next-ragbot-app/node_modules
+next-ragbot-app/.next
+next-ragbot-app/.env
