@@ -3,7 +3,7 @@ import { IMemberMessage, UserType } from "@/interfaces/message";
 
 import moment from "moment";
 
-const PDFBot = () => {
+const GeminiBot = () => {
   //사용자 대화닉네임 상태값 정의
   const [nickName, setNickName] = useState<string>("eddy");
 
@@ -30,7 +30,7 @@ const PDFBot = () => {
     //백엔드에서 두번에 응답을 받아올수 없어서 그래용..
     setMessageList((prev) => [...prev, userMessage]);
 
-    const response = await fetch("/api/pdfpineconebot", {
+    const response = await fetch("/api/geminibot", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -177,4 +177,4 @@ const PDFBot = () => {
   );
 };
 
-export default PDFBot;
+export default GeminiBot;
